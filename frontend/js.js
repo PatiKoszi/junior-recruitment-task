@@ -3,7 +3,21 @@ let todoForm = null;
 let todoSearch = null;
 
 function addTask(text) {
-  console.log('Dodaje zadanie do listy')
+
+  //element to do
+  const todo=document.createElement('div');
+  todo.classList.add('todo-element');
+  // belka glowna
+  const todoBar = document.createElement('div');
+  todoBar.classList.add('todo-element-bar');
+  //data w belce
+  const todoDate = document.createElement('div');
+  todoDate.classList.add('todo-element-bar');
+  const date = new Date();
+  const dateText = date.getDate() + '-' + (date.getMonth()+1) + '-' + date.getFullYear() + ' godz.: ' + date.getHours() + ':' + date.getMinutes();
+  todoDate.innerText = dateText;
+
+
 }
 
 document.addEventListener('DOMContentLoaded', function () {
