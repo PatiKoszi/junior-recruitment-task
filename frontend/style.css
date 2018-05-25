@@ -45,3 +45,30 @@ body {
 .todo-form-button:hover {
     background: #ED2D2D;
 }
+/*to jest ostylowanie lista zada*/
+.todo-list-cnt {
+    background: #fff;
+    font-family:sans-serif;
+    margin:1rem 0;
+    border:1px solid #ddd;
+    padding:1rem 2rem;
+}
+.todo-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todo-list-search-form {
+    width:50%;
+}
+.todo-list-search {
+    border:1px solid #ddd;
+    padding:0.5rem;
+    width: 100%;
+}
+.todo-list-title {
+    margin-top:0;
+    margin-bottom:0;
+    font-size:1rem;
+    text-transform: uppercase;
+}
