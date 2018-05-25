@@ -7,9 +7,11 @@ function addTask(text) {
   //element to do
   const todo=document.createElement('div');
   todo.classList.add('todo-element');
+
   // belka glowna
   const todoBar = document.createElement('div');
   todoBar.classList.add('todo-element-bar');
+
   //data w belce
   const todoDate = document.createElement('div');
   todoDate.classList.add('todo-element-bar');
@@ -17,6 +19,27 @@ function addTask(text) {
   const dateText = date.getDate() + '-' + (date.getMonth()+1) + '-' + date.getFullYear() + ' godz.: ' + date.getHours() + ':' + date.getMinutes();
   todoDate.innerText = dateText;
 
+  //przycisk usuwania
+  const todoDelete=document.createElement('button');
+  todoDelete.classList.add('todo-element-delete');
+  todoDelete.classList.add('button');
+  todoDelete.innerHTML = '<i class="fas fa-times-circle"></i>';
+
+  //wrzucamy element do belki
+  todoBar.appendChild(todoDate);
+  todoBar.appendChild(todoDelete);
+
+  //element z tekstem
+  const todoText = document.createElement('div');
+  todoText.classList.add('todo-element-text');
+  todoText.innerText = text;
+
+  //laczymy całość
+  todo.appendChild(todoBar);
+  todo.appendChild(todoText);
+
+  //i wrzucamy do listy
+  todoList.append(todo);
 
 }
 
@@ -25,6 +48,12 @@ document.addEventListener('DOMContentLoaded', function () {
   todoForm = document.querySelector('#todoForm');
   todoSearch = document.querySelector('#todoSearch');
 
+  todoList.addEventListener('click', function (event) {
+    //console.log(event.target);
+    if (event.target.closest('.todo-element-delete'))
+
+
+  });
 
 todoForm.addEventListener('submit', function (event) {
   event.preventDefault();
