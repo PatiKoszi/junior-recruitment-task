@@ -50,7 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   todoList.addEventListener('click', function (event) {
     //console.log(event.target);
-    if (event.target.closest('.todo-element-delete'))
+    if (event.target.closest('.todo-element-delete') !== null) {
+      event.target.closest('.todo-element').remove();
+    }
 
 
   });
