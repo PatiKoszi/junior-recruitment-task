@@ -80,4 +80,8 @@ todoForm.addEventListener('submit', function (event) {
       }
     });
   });
+
+  localStorage.setItem('myElement', 'jakaś wartość');
+  console.log(localStorage.getItem('myElement'));
+
 });
