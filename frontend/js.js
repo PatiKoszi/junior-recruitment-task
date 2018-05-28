@@ -65,4 +65,19 @@ todoForm.addEventListener('submit', function (event) {
     textarea.value='';
     }
   });
+
+  todoSearch.addEventListener('input', function() {
+    const val = this.value;
+    const elems = todoList.querySelectorAll('.todo-element');
+
+    [].forEach.call(elems, function(el) {
+      const text = el.querySelector('.todo-element-text').innerText;
+
+      if (text.indexOf(val) !== -1) {
+        el.style.setProperty('display', '');
+      } else {
+        el.style.setProperty('display', 'none');
+      }
+    });
+  });
 });
